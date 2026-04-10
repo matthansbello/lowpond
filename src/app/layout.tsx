@@ -17,7 +17,18 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "LowPond Nigeria Limited | Engineering Perfection",
-  description: "LowPond Nigeria Limited delivers structurally sound, technically advanced engineering solutions—built with exacting standards, delivered on schedule.",
+  description: "LowPond Nigeria Limited delivers structurally sound, technically advanced engineering solutions, built with exacting standards, delivered on schedule.",
+  icons: {
+    icon: "/images/cropped-LowPond-Main-Logo2.webp",
+    apple: "/images/cropped-LowPond-Main-Logo2.webp",
+  },
+  openGraph: {
+    images: ["/images/cropped-LowPond-Main-Logo2.webp"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/images/cropped-LowPond-Main-Logo2.webp"],
+  },
 };
 
 export default function RootLayout({

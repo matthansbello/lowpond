@@ -1,21 +1,31 @@
-import Image from "next/image";
-import { Link } from "lucide-react";
+import { PageHero } from "@/components/PageHero";
+import { AboutSlider } from "@/components/AboutSlider";
+import { Quote } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export default function About() {
+  const testimonials = [
+    {
+      quote: "LowPond has a great team of professionals who are good at what they do, I had no regrets working with them.",
+      name: "John Michael",
+      title: "CEO",
+      company: "JK Farms"
+    },
+    // {
+    //   quote: "Their project management team operates with military precision. They delivered our industrial facility exactly on schedule despite severe supply chain disruptions.",
+    //   name: "Sarah T.",
+    //   title: "Chief Executive Officer",
+    //   company: "Pan-African Manufacturing"
+    // },
+    
+  ];
+
   return (
     <>
-      {/* Page Header */}
-      <section className="bg-[#0A1628] text-white pt-32 pb-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-pattern opacity-10" />
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <SectionHeading 
-            heading="About LowPond"
-            subtext="Building the infrastructure of tomorrow, today."
-            className="text-white"
-          />
-        </div>
-      </section>
+      <PageHero 
+        heading="About LowPond"
+        subtext="Building the infrastructure of tomorrow, today through precision engineering and sustainable innovation."
+      />
 
       {/* Main Content */}
       <section className="py-24 bg-white">
@@ -31,7 +41,8 @@ export default function About() {
               </p>
             </div>
             <div className="aspect-[4/3] bg-[#E2E8F0] rounded-xl flex items-center justify-center border border-gray-100 shadow-sm">
-              <span className="text-[#94A3B8] font-medium">Corporate Office Placeholder Image</span>
+              {/* <span className="text-[#94A3B8] font-medium">Corporate Office Placeholder Image</span> */}
+              <AboutSlider />
             </div>
           </div>
 
@@ -49,6 +60,37 @@ export default function About() {
                 To be the most trusted name in African infrastructure development, continuously setting new benchmarks for technical innovation and structural perfection.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24 bg-[#F1F5F9]">
+        <div className="container mx-auto px-4 md:px-6">
+          <SectionHeading 
+            align="center"
+            heading="Client Testimonials"
+            subtext="Proven excellence across diverse engineering disciplines."
+            className="mb-16"
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            {testimonials.map((item, i) => (
+              <div key={i} className="bg-white p-10 md:p-12 rounded-2xl shadow-sm border border-gray-100 relative">
+                <Quote className="absolute top-8 right-8 w-12 h-12 text-[#3B82F6] opacity-10" />
+                <p className="text-xl text-[#0F172A] leading-relaxed mb-8 italic relative z-10">
+                  "{item.quote}"
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-gray-200 rounded-full shrink-0 flex items-center justify-center text-gray-500 text-sm font-medium">
+                    {item.name.charAt(0)}
+                  </div>
+                  <div>
+                    <div className="font-bold text-[#0F172A]">{item.name}</div>
+                    <div className="text-sm text-[#64748B]">{item.title}, <span className="text-[#3B82F6]">{item.company}</span></div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Phone, Mail } from "lucide-react";
 
 export function Footer() {
@@ -11,8 +12,13 @@ export function Footer() {
           {/* Brand Col */}
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="w-10 h-10 bg-[#3B82F6] rounded flex items-center justify-center">
-                <span className="text-white font-bold text-xl leading-none">L</span>
+              <div className="relative w-10 h-10">
+                <Image 
+                  src="/images/cropped-LowPond-Main-Logo2.webp" 
+                  alt="LowPond Logo" 
+                  fill 
+                  className="object-contain"
+                />
               </div>
               <span className="text-xl font-bold tracking-tight text-white">
                 LowPond
@@ -30,15 +36,6 @@ export function Footer() {
               <li>
                 <Link href="/about" className="hover:text-white transition-colors text-sm">About Us</Link>
               </li>
-              <li>
-                <Link href="/team" className="hover:text-white transition-colors text-sm">Our Team</Link>
-              </li>
-              <li>
-                <Link href="/projects" className="hover:text-white transition-colors text-sm">Featured Projects</Link>
-              </li>
-              <li>
-                <Link href="/testimonials" className="hover:text-white transition-colors text-sm">Testimonials</Link>
-              </li>
             </ul>
           </div>
 
@@ -52,9 +49,9 @@ export function Footer() {
               <li>
                 <Link href="/services#infrastructure" className="hover:text-white transition-colors text-sm">Infrastructure Design</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/services#mep" className="hover:text-white transition-colors text-sm">MEP Systems</Link>
-              </li>
+              </li> */}
               <li>
                 <Link href="/services#project-management" className="hover:text-white transition-colors text-sm">Project Management</Link>
               </li>
@@ -67,7 +64,7 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#3B82F6] shrink-0 mt-0.5" />
-                <span className="text-sm">74 Engineering Way, Victoria Island, Lagos, Nigeria</span>
+                <span className="text-sm">No.4 Secretariat Road, Jos. Plateau State, Nigeria</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-[#3B82F6] shrink-0" />

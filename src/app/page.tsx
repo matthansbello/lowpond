@@ -1,46 +1,24 @@
 import Link from "next/link";
-import { ArrowRight, Building2, HardHat, Ruler, ShieldCheck } from "lucide-react";
+import { ArrowRight, Building2, ShieldCheck, Globe } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { HeroSlider } from "@/components/HeroSlider";
+import { AboutSlider } from "@/components/AboutSlider";
+import { ClientMarquee } from "@/components/ClientMarquee";
 
 export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-[#0A1628] text-white">
-        <div className="absolute inset-0 bg-grid-pattern opacity-20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628] via-transparent to-transparent" />
-        
-        <div className="container relative z-10 mx-auto px-4 md:px-6">
-          <div className="max-w-4xl">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight">
-              Precision-Engineered Solutions for Nigeria's <span className="text-[#3B82F6]">Infrastructure Future</span>
-            </h1>
-            <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl leading-relaxed">
-              LowPond Nigeria Limited delivers structurally sound, technically advanced engineering solutions—built with exacting standards, delivered on schedule.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" variant="primary" asChild>
-                <Link href="/services">
-                  Explore Our Services
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" className="border-gray-500 text-white hover:bg-white/10" asChild>
-                <Link href="/contact">Contact Our Team</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSlider />
 
       {/* Metrics Bar */}
       <section className="bg-[#1B2A4A] py-12 border-y border-[#3B82F6]/20 relative z-20 -mt-8 mx-4 md:mx-6 lg:mx-auto container rounded-lg shadow-xl mb-24">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 px-8">
           {[
             { label: "Completed Projects", value: "150+" },
-            { label: "Expert Engineers", value: "45" },
-            { label: "Years of Excellence", value: "12" },
+            { label: "Expert Engineers", value: "35" },
+            { label: "Years of Excellence", value: "20+" },
             { label: "Client Satisfaction", value: "99%" }
           ].map((metric, i) => (
             <div key={i} className="text-center">
@@ -50,6 +28,9 @@ export default function Home() {
           ))}
         </div>
       </section>
+      
+      {/* Client Marquee */}
+      <ClientMarquee />
 
       {/* Services Preview */}
       <section className="py-24 bg-white">
@@ -70,19 +51,19 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { 
+                icon: <ShieldCheck className="w-10 h-10" />, 
+                title: "Quality Management", 
+                desc: "Ensuring excellence at every stage with robust quality management systems for projects." 
+              },
+              { 
                 icon: <Building2 className="w-10 h-10" />, 
-                title: "Structural Engineering", 
-                desc: "Advanced structural analysis and robust design for commercial and industrial facilities." 
+                title: "Building Production", 
+                desc: "Efficient and quality construction for industrial and commercial growth across Nigeria." 
               },
               { 
-                icon: <HardHat className="w-10 h-10" />, 
-                title: "Project Management", 
-                desc: "End-to-end execution, ensuring timelines, technical standards, and safety compliance." 
-              },
-              { 
-                icon: <Ruler className="w-10 h-10" />, 
-                title: "Civil Infrastructure", 
-                desc: "Master planning and construction of roads, bridges, and municipal civil works." 
+                icon: <Globe className="w-10 h-10" />, 
+                title: "GIS Consulting", 
+                desc: "Location intelligence and spatial analysis for strategic industrial and commercial decisions." 
               }
             ].map((service, i) => (
               <div key={i} className="group p-8 border border-gray-100 rounded-xl bg-[#F1F5F9] hover:bg-white hover:border-[#3B82F6]/30 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
@@ -105,13 +86,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden bg-gray-200">
               <div className="absolute inset-0 bg-[#0A1628]/10 mix-blend-multiply" />
-              {/* Placeholder for actual image */}
-              <div className="absolute inset-0 flex items-center justify-center text-gray-400 bg-gray-300">
-                <span className="font-medium flex flex-col items-center gap-2">
-                  <ShieldCheck className="w-12 h-12 text-gray-400" />
-                  Engineering Facility Placeholder
-                </span>
-              </div>
+              <AboutSlider />
             </div>
             
             <div className="space-y-8">

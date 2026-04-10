@@ -1,4 +1,5 @@
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { PageHero } from "@/components/PageHero";
 
 export default function Team() {
   const team = [
@@ -26,17 +27,10 @@ export default function Team() {
 
   return (
     <>
-      <section className="bg-[#0A1628] text-white pt-32 pb-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-pattern opacity-10" />
-        <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
-          <SectionHeading 
-            align="center"
-            heading="Our Leadership Team"
-            subtext="The technical minds behind our engineering success."
-            className="text-white mx-auto"
-          />
-        </div>
-      </section>
+      <PageHero 
+        heading="Our Leadership Team"
+        subtext="Meet the technical minds and visionary engineers behind LowPond's infrastructure excellence."
+      />
 
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4 md:px-6">

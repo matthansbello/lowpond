@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -10,9 +11,6 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
   { name: "Services", href: "/services" },
-  { name: "Our Team", href: "/team" },
-  { name: "Featured Projects", href: "/projects" },
-  { name: "Testimonials", href: "/testimonials" },
   { name: "Contact Us", href: "/contact" },
 ];
 
@@ -45,8 +43,13 @@ export function Header() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-[#0A1628] rounded flex items-center justify-center group-hover:bg-[#3B82F6] transition-colors">
-              <span className="text-white font-bold text-xl leading-none">L</span>
+            <div className="relative w-10 h-10">
+              <Image 
+                src="/images/cropped-LowPond-Main-Logo2.webp" 
+                alt="LowPond Logo" 
+                fill 
+                className="object-contain"
+              />
             </div>
             <span className={cn("text-xl font-bold tracking-tight transition-colors", isScrolled ? "text-[#0F172A]" : "text-white")}>
               LowPond
