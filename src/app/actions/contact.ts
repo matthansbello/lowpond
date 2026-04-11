@@ -17,9 +17,16 @@ export async function sendContactEmail(formData: FormData) {
   }
 
   try {
+    const recipientEmail = process.env.CONTACT_RECIPIENT_EMAIL;
+    
+    if (!recipientEmail) {
+      console.error("Missing CONTACT_RECIPIENT_EMAIL environment variable");
+      return { success: false, error: "Configuration error: Missing recipient email address." };
+    }
+
     const { data, error } = await resend.emails.send({
       from: "LowPond <lowpond@notifications.mustardway.com>",
-      to: [process.env.CONTACT_RECIPIENT_EMAIL || "lowpondng@gmail.com"],
+      to: [recipientEmail],
       subject: `New Project Inquiry: ${subject}`,
       replyTo: email,
       html: `

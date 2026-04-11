@@ -1,4 +1,5 @@
 import { PageHero } from "@/components/PageHero";
+import { CONTACT_EMAIL, OFFICE_ADDRESS } from "@/lib/constants";
 
 export default function PrivacyPolicy() {
   const sections = [
@@ -28,7 +29,7 @@ export default function PrivacyPolicy() {
     },
     {
       title: "7. Contact Us",
-      content: "If you have any questions or concerns about this Privacy Policy, please contact us at lowpondng@gmail.com or visit our office at No.4 Secretariat Road, Jos, Plateau State, Nigeria."
+      content: `If you have any questions or concerns about this Privacy Policy, please contact us at ${CONTACT_EMAIL} or visit our office at ${OFFICE_ADDRESS}.`
     }
   ];
 

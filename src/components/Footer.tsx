@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Phone, Mail } from "lucide-react";
+import { CONTACT_EMAIL, CONTACT_PHONE, OFFICE_ADDRESS } from "@/lib/constants";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -64,15 +65,15 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#3B82F6] shrink-0 mt-0.5" />
-                <span className="text-sm">No.4 Secretariat Road, Jos. Plateau State, Nigeria</span>
+                <span className="text-sm">{OFFICE_ADDRESS}</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-[#3B82F6] shrink-0" />
-                <a href="tel:+2348037155720" className="text-sm hover:text-white transition-colors">+234 803 715 5720</a>
+                <a href={`tel:${CONTACT_PHONE}`} className="text-sm hover:text-white transition-colors">{CONTACT_PHONE}</a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-[#3B82F6] shrink-0" />
-                <a href="mailto:lowpondng@gmail.com" className="text-sm hover:text-white transition-colors">lowpondng@gmail.com</a>
+                <a href={`mailto:${CONTACT_EMAIL}`} className="text-sm hover:text-white transition-colors">{CONTACT_EMAIL}</a>
               </li>
             </ul>
           </div>

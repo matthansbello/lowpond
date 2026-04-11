@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/Button";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { AboutSlider } from "@/components/AboutSlider";
 import { PageHero } from "@/components/PageHero";
+import { CONTACT_EMAIL, CONTACT_PHONE, OFFICE_ADDRESS } from "@/lib/constants";
 
 export default function Contact() {
   return (
@@ -28,9 +29,7 @@ export default function Contact() {
                     <div>
                       <div className="font-bold text-[#0F172A] mb-1">Address</div>
                       <div className="text-[#64748B] leading-relaxed">
-                        No.4 Secretariat Road, Jos.<br />
-                        Plateau State<br />
-                        Nigeria
+                        {OFFICE_ADDRESS}
                       </div>
                     </div>
                   </li>
@@ -40,8 +39,8 @@ export default function Contact() {
                     </div>
                     <div>
                       <div className="font-bold text-[#0F172A] mb-1">Phone</div>
-                      <a href="tel:+2348037155720" className="text-[#64748B] hover:text-[#3B82F6] transition-colors">
-                        +234 803 715 5720
+                      <a href={`tel:${CONTACT_PHONE}`} className="text-[#64748B] hover:text-[#3B82F6] transition-colors">
+                        {CONTACT_PHONE}
                       </a>
                     </div>
                   </li>
@@ -51,8 +50,8 @@ export default function Contact() {
                     </div>
                     <div>
                       <div className="font-bold text-[#0F172A] mb-1">Email</div>
-                      <a href="mailto:lowpondng@gmail.com" className="text-[#64748B] hover:text-[#3B82F6] transition-colors">
-                        lowpondng@gmail.com
+                      <a href={`mailto:${CONTACT_EMAIL}`} className="text-[#64748B] hover:text-[#3B82F6] transition-colors">
+                        {CONTACT_EMAIL}
                       </a>
                     </div>
                   </li>
