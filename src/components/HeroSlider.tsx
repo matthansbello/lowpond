@@ -55,7 +55,7 @@ export function HeroSlider() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight text-white drop-shadow-md">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 md:mb-6 leading-tight text-white drop-shadow-md">
               Precision-Engineered Solutions for Nigeria's <span className="text-[#3B82F6]">Infrastructure Future</span>
             </h1>
           </motion.div>
@@ -65,7 +65,7 @@ export function HeroSlider() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <p className="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl leading-relaxed drop-shadow-sm">
+            <p className="text-base md:text-xl text-gray-200 mb-12 md:mb-10 max-w-2xl leading-relaxed drop-shadow-sm">
               LowPond Nigeria Limited delivers structurally sound, technically advanced engineering solutions, built with exacting standards, delivered on schedule.
             </p>
           </motion.div>
