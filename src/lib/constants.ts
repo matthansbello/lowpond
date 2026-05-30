@@ -1,5 +1,5 @@
 /**
- * Global constants for the LowPond website.
+ * Global constants for the Lowpond website.
  * Centralizing these values helps maintain consistency and avoids secrets-scanning issues for public data.
  */
 

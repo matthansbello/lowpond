@@ -1,5 +1,4 @@
 import { ContactForm } from "@/components/ContactForm";
-import { Button } from "@/components/ui/Button";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { AboutSlider } from "@/components/AboutSlider";
 import { PageHero } from "@/components/PageHero";

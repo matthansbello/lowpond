@@ -11,6 +11,7 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
   { name: "Services", href: "/services" },
+  { name: "Our Team", href: "/team" },
   { name: "Contact Us", href: "/contact" },
 ];
 
@@ -19,6 +20,8 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
+  const closeMobileMenu = () => setMobileMenuOpen(false);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -26,10 +29,6 @@ export function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  useEffect(() => {
-    setMobileMenuOpen(false);
-  }, [pathname]);
 
   return (
     <header
@@ -44,19 +43,23 @@ export function Header() {
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 group">
             <div className="relative w-10 h-10">
-              <Image 
-                src="/images/cropped-LowPond-Main-Logo2.webp" 
-                alt="LowPond Logo" 
-                fill 
+              <Image
+                src="/images/cropped-LowPond-Main-Logo2.webp"
+                alt="Lowpond Logo"
+                fill
                 className="object-contain"
               />
             </div>
-            <span className={cn("text-xl font-bold tracking-tight transition-colors", isScrolled ? "text-[#0F172A]" : "text-white")}>
-              LowPond
+            <span
+              className={cn(
+                "text-xl font-bold tracking-tight transition-colors",
+                isScrolled ? "text-text-primary" : "text-white"
+              )}
+            >
+              Lowpond
             </span>
           </Link>
 
-          {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
@@ -65,12 +68,12 @@ export function Header() {
                   key={link.name}
                   href={link.href}
                   className={cn(
-                    "text-sm font-medium transition-colors hover:text-[#3B82F6]",
+                    "text-sm font-medium transition-colors hover:text-accent-blue",
                     isActive
-                      ? "text-[#3B82F6]"
+                      ? "text-accent-blue"
                       : isScrolled
-                      ? "text-[#64748B]"
-                      : "text-gray-300"
+                        ? "text-text-muted"
+                        : "text-gray-300"
                   )}
                 >
                   {link.name}
@@ -79,33 +82,32 @@ export function Header() {
             })}
           </nav>
 
-          {/* Desktop CTA */}
           <div className="hidden lg:flex items-center">
             <Link
               href="/contact"
               className={cn(
                 "px-5 py-2.5 rounded-md text-sm font-medium transition-all hover:scale-105",
                 isScrolled
-                  ? "bg-[#0A1628] text-white hover:bg-[#3B82F6]"
-                  : "bg-white text-[#0A1628] hover:bg-gray-100"
+                  ? "bg-primary-navy text-white hover:bg-accent-blue"
+                  : "bg-white text-primary-navy hover:bg-gray-100"
               )}
             >
               Get a Quote
             </Link>
           </div>
 
-          {/* Mobile Menu Toggle */}
           <button
-            className={cn("lg:hidden p-2", isScrolled ? "text-[#0F172A]" : "text-white")}
+            type="button"
+            className={cn("lg:hidden p-2", isScrolled ? "text-text-primary" : "text-white")}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle Navigation Menu"
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Nav Drawer */}
       <div
         className={cn(
           "lg:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-200 shadow-lg overflow-hidden transition-all duration-300 ease-in-out",
@@ -119,9 +121,10 @@ export function Header() {
               <Link
                 key={link.name}
                 href={link.href}
+                onClick={closeMobileMenu}
                 className={cn(
                   "block text-base font-medium transition-colors",
-                  isActive ? "text-[#3B82F6]" : "text-[#0F172A]"
+                  isActive ? "text-accent-blue" : "text-text-primary"
                 )}
               >
                 {link.name}
@@ -131,7 +134,8 @@ export function Header() {
           <div className="pt-4 mt-4 border-t border-gray-100">
             <Link
               href="/contact"
-              className="block w-full text-center bg-[#0A1628] text-white py-3 rounded-md font-medium"
+              onClick={closeMobileMenu}
+              className="block w-full text-center bg-primary-navy text-white py-3 rounded-md font-medium"
             >
               Get a Quote
             </Link>

@@ -4,11 +4,11 @@ export default function TermsAndConditions() {
   const sections = [
     {
       title: "1. Acceptance of Terms",
-      content: "By accessing and using the LowPond Nigeria Limited website, you agree to be bound by these Terms and Conditions and all applicable laws and regulations in Nigeria. If you do not agree with any of these terms, you are prohibited from using or accessing this site."
+      content: "By accessing and using the Lowpond Nigeria Limited website, you agree to be bound by these Terms and Conditions and all applicable laws and regulations in Nigeria. If you do not agree with any of these terms, you are prohibited from using or accessing this site."
     },
     {
       title: "2. Intellectual Property Rights",
-      content: "The content on this website, including but not limited to text, graphics, logos, images, and technical specifications, is the property of LowPond Nigeria Limited and is protected by copyright and intellectual property laws. Unauthorized use of these materials is strictly prohibited."
+      content: "The content on this website, including but not limited to text, graphics, logos, images, and technical specifications, is the property of Lowpond Nigeria Limited and is protected by copyright and intellectual property laws. Unauthorized use of these materials is strictly prohibited."
     },
     {
       title: "3. Use License",
@@ -16,11 +16,11 @@ export default function TermsAndConditions() {
     },
     {
       title: "4. Disclaimer",
-      content: "The materials on LowPond Nigeria Limited's website are provided on an 'as is' basis. While we strive for accuracy, we make no warranties, expressed or implied, and hereby disclaim and negate all other warranties including, without limitation, implied warranties of merchantability or fitness for a particular engineering purpose."
+      content: "The materials on Lowpond Nigeria Limited's website are provided on an 'as is' basis. While we strive for accuracy, we make no warranties, expressed or implied, and hereby disclaim and negate all other warranties including, without limitation, implied warranties of merchantability or fitness for a particular engineering purpose."
     },
     {
       title: "5. Limitations of Liability",
-      content: "In no event shall LowPond Nigeria Limited or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on our website."
+      content: "In no event shall Lowpond Nigeria Limited or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on our website."
     },
     {
       title: "6. Governing Law",
@@ -28,7 +28,7 @@ export default function TermsAndConditions() {
     },
     {
       title: "7. Modifications",
-      content: "LowPond Nigeria Limited may revise these terms of service for its website at any time without notice. By using this website you are agreeing to be bound by the then current version of these terms and conditions."
+      content: "Lowpond Nigeria Limited may revise these terms of service for its website at any time without notice. By using this website you are agreeing to be bound by the then current version of these terms and conditions."
     }
   ];
 
@@ -36,7 +36,7 @@ export default function TermsAndConditions() {
     <>
       <PageHero 
         heading="Terms of Service"
-        subtext="Operating conditions and legal agreements for using LowPond infrastructure resources."
+        subtext="Operating conditions and legal agreements for using Lowpond infrastructure resources."
       />
       
       <section className="py-24 bg-white">

@@ -23,7 +23,7 @@ export default function NotFound() {
         </h2>
         
         <p className="text-lg text-gray-400 mb-10 leading-relaxed max-w-md mx-auto">
-          The architectural path you followed seems to be missing from our blueprints. We're currently surveying this route.
+          The architectural path you followed seems to be missing from our blueprints. We are currently surveying this route.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

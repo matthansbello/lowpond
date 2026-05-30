@@ -5,7 +5,7 @@ export default function PrivacyPolicy() {
   const sections = [
     {
       title: "1. Introduction",
-      content: "LowPond Nigeria Limited ('we', 'us', or 'our') is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your personal information when you visit our website or use our engineering services."
+      content: "Lowpond Nigeria Limited ('we', 'us', or 'our') is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your personal information when you visit our website or use our engineering services."
     },
     {
       title: "2. Information We Collect",
@@ -37,7 +37,7 @@ export default function PrivacyPolicy() {
     <>
       <PageHero 
         heading="Privacy Policy"
-        subtext="How we protect and manage your personal information at LowPond Nigeria Limited."
+        subtext="How we protect and manage your personal information at Lowpond Nigeria Limited."
       />
       
       <section className="py-24 bg-white">

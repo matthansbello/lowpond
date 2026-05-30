@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 export default function About() {
   const testimonials = [
     {
-      quote: "LowPond has a great team of professionals who are good at what they do, I had no regrets working with them.",
+      quote: "Lowpond has a great team of professionals who are good at what they do, I had no regrets working with them.",
       name: "John Michael",
       title: "CEO",
       company: "JK Farms"
@@ -23,7 +23,7 @@ export default function About() {
   return (
     <>
       <PageHero 
-        heading="About LowPond"
+        heading="About Lowpond"
         subtext="Building the infrastructure of tomorrow, today through precision engineering and sustainable innovation."
       />
 
@@ -34,7 +34,7 @@ export default function About() {
             <div className="space-y-6">
               <h2 className="text-3xl font-bold text-[#0F172A]">Our Story</h2>
               <p className="text-lg text-[#64748B] leading-relaxed">
-                Founded with a vision to redefine engineering excellence in Nigeria, LowPond Nigeria Limited has grown from a specialized consultancy into a full-scale infrastructure and construction management firm. 
+                Founded with a vision to redefine engineering excellence in Nigeria, Lowpond Nigeria Limited has grown from a specialized consultancy into a full-scale infrastructure and construction management firm. 
               </p>
               <p className="text-lg text-[#64748B] leading-relaxed">
                 We believe that true engineering perfection lies at the intersection of innovative design, rigorous technical standards, and unwavering dedication to safety and sustainability.
@@ -78,7 +78,7 @@ export default function About() {
               <div key={i} className="bg-white p-10 md:p-12 rounded-2xl shadow-sm border border-gray-100 relative">
                 <Quote className="absolute top-8 right-8 w-12 h-12 text-[#3B82F6] opacity-10" />
                 <p className="text-xl text-[#0F172A] leading-relaxed mb-8 italic relative z-10">
-                  "{item.quote}"
+                  &ldquo;{item.quote}&rdquo;
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-gray-200 rounded-full shrink-0 flex items-center justify-center text-gray-500 text-sm font-medium">

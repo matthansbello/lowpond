@@ -1,12 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const IMAGES = [
   "/images/Lowpond-Nig-Ltd-1.webp",
   "/images/Lowpond-Nig-Ltd-2.webp",
-  "/images/Lowpond-Nig-Ltd-3.webp"
+  "/images/Lowpond-Nig-Ltd-3.webp",
 ];
 
 export function AboutSlider() {
@@ -30,22 +31,23 @@ export function AboutSlider() {
           transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
           className="absolute inset-0"
         >
-          <img
+          <Image
             src={IMAGES[currentIndex]}
-            alt={`Engineering display ${currentIndex + 1}`}
-            className="w-full h-full object-cover"
+            alt={`Engineering project ${currentIndex + 1}`}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628]/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-primary-navy/40 to-transparent" />
         </motion.div>
       </AnimatePresence>
-      
-      {/* Mini Indicators */}
+
       <div className="absolute bottom-4 right-4 flex gap-1.5 z-10">
         {IMAGES.map((_, idx) => (
           <div
             key={idx}
             className={`h-1.5 rounded-full transition-all duration-300 ${
-              idx === currentIndex ? "w-6 bg-[#3B82F6]" : "w-1.5 bg-white/50"
+              idx === currentIndex ? "w-6 bg-accent-blue" : "w-1.5 bg-white/50"
             }`}
           />
         ))}

@@ -1,4 +1,3 @@
-import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PageHero } from "@/components/PageHero";
 
 export default function Team() {
@@ -29,7 +28,7 @@ export default function Team() {
     <>
       <PageHero 
         heading="Our Leadership Team"
-        subtext="Meet the technical minds and visionary engineers behind LowPond's infrastructure excellence."
+        subtext="Meet the technical minds and visionary engineers behind Lowpond&apos;s infrastructure excellence."
       />
 
       <section className="py-24 bg-white">

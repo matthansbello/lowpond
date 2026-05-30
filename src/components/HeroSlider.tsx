@@ -1,16 +1,17 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
 const BACKGROUND_IMAGES = [
-  "images/Lowpond-1.webp",
-  "images/Lowpond-2.webp",
-  "images/Lowpond-Nig-Ltd-6.webp",
-  "images/Lowpond-Nig-Ltd-1.webp"
+  "/images/Lowpond-1.webp",
+  "/images/Lowpond-2.webp",
+  "/images/Lowpond-Nig-Ltd-6.webp",
+  "/images/Lowpond-Nig-Ltd-1.webp",
 ];
 
 const AUTOPLAY_INTERVAL = 6000;
@@ -26,8 +27,7 @@ export function HeroSlider() {
   }, []);
 
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-[#0A1628] text-white">
-      {/* Background Image Slider */}
+    <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-primary-navy text-white">
       <AnimatePresence initial={false}>
         <motion.div
           key={currentIndex}
@@ -37,17 +37,21 @@ export function HeroSlider() {
           transition={{ duration: 1.5, ease: "easeInOut" }}
           className="absolute inset-0"
         >
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${BACKGROUND_IMAGES[currentIndex]})` }}
+          <Image
+            src={BACKGROUND_IMAGES[currentIndex]}
+            alt=""
+            fill
+            priority={currentIndex === 0}
+            sizes="100vw"
+            className="object-cover"
           />
         </motion.div>
       </AnimatePresence>
 
       <div className="absolute inset-0 bg-grid-pattern opacity-20" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628] via-[#0A1628]/60 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0A1628]/90 via-[#0A1628]/40 to-transparent" />
-      
+      <div className="absolute inset-0 bg-gradient-to-t from-primary-navy via-primary-navy/60 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-primary-navy/90 via-primary-navy/40 to-transparent" />
+
       <div className="container relative z-10 mx-auto px-4 md:px-6">
         <div className="max-w-4xl">
           <motion.div
@@ -56,27 +60,28 @@ export function HeroSlider() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 md:mb-6 leading-tight text-white drop-shadow-md">
-              Precision-Engineered Solutions for Nigeria's <span className="text-[#3B82F6]">Infrastructure Future</span>
+              Precision-Engineered Solutions for Nigeria&apos;s{" "}
+              <span className="text-accent-blue">Infrastructure Future</span>
             </h1>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <p className="text-base md:text-xl text-gray-200 mb-12 md:mb-10 max-w-2xl leading-relaxed drop-shadow-sm">
-              LowPond Nigeria Limited delivers structurally sound, technically advanced engineering solutions, built with exacting standards, delivered on schedule.
+              Lowpond Nigeria Limited delivers structurally sound, technically advanced engineering solutions, built with exacting standards, delivered on schedule.
             </p>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <Button size="lg" variant="primary" asChild className="ring-2 ring-transparent hover:ring-[#3B82F6]/50 transition-all">
+            <Button size="lg" variant="primary" asChild className="ring-2 ring-transparent hover:ring-accent-blue/50 transition-all">
               <Link href="/services">
                 Explore Our Services
                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -89,14 +94,14 @@ export function HeroSlider() {
         </div>
       </div>
 
-      {/* Slider Indicators */}
       <div className="absolute bottom-12 left-0 right-0 z-20 flex justify-center gap-3">
         {BACKGROUND_IMAGES.map((_, idx) => (
           <button
             key={idx}
+            type="button"
             onClick={() => setCurrentIndex(idx)}
             className={`h-1.5 rounded-full transition-all duration-500 ${
-              idx === currentIndex ? "w-8 bg-[#3B82F6]" : "w-2 bg-white/40 hover:bg-white/60"
+              idx === currentIndex ? "w-8 bg-accent-blue" : "w-2 bg-white/40 hover:bg-white/60"
             }`}
             aria-label={`Go to slide ${idx + 1}`}
           />

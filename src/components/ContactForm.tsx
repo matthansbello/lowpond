@@ -60,6 +60,14 @@ export function ContactForm() {
       <h3 className="text-2xl font-bold text-[#0F172A] mb-8 relative z-10">Send a Message</h3>
       
       <form action={handleSubmit} className="space-y-6 relative z-10">
+        <input
+          type="text"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          className="absolute opacity-0 pointer-events-none h-0 w-0 overflow-hidden"
+        />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2">
             <label htmlFor="firstName" className="text-sm font-semibold text-[#0F172A]">First Name</label>
@@ -107,6 +115,7 @@ export function ContactForm() {
           >
             <option value="Request a Consultation">Request a Consultation</option>
             <option value="Structural Engineering Services">Structural Engineering Services</option>
+            <option value="Mining & Mineral Activities">Mining & Mineral Activities</option>
             <option value="Project Management Inquiry">Project Management Inquiry</option>
             <option value="Other">Other</option>
           </select>
