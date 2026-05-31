@@ -8,6 +8,10 @@ const IMAGES = [
   "/images/Lowpond-Nig-Ltd-1.webp",
   "/images/Lowpond-Nig-Ltd-2.webp",
   "/images/Lowpond-Nig-Ltd-3.webp",
+  "/images/Lowpond-Projects2.jpeg",
+  "/images/Lowpond-Projects4.jpeg",
+  "/images/Lowpond-Projects6.jpeg",
+  
 ];
 
 export function AboutSlider() {
