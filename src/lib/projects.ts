@@ -16,6 +16,13 @@ export const FEATURED_PROJECTS: Project[] = [
     summary:
       "Integrated mechanical and electrical systems for a large-scale industrial processing facility.",
     image: "/images/Lowpond-Mill-1.webp",
+    images: [
+      "/images/Lowpond-Mill-1.webp",
+      "/images/Lowpond-Projects13.jpeg",
+      "/images/Lowpond-Projects14.jpeg",
+      "/images/Lowpond-Projects7.jpeg",
+      "/images/Lowpond-Projects8.jpeg",
+    ],
     location: "Plateau State, Nigeria",
     year: "2024",
   },
@@ -52,7 +59,45 @@ export const FEATURED_PROJECTS: Project[] = [
     summary:
       "Additional warehousing capacity engineered for heavy-duty industrial storage requirements.",
     image: "/images/Lowpond-Nig-Ltd-4.webp",
+    images: [
+      "/images/Lowpond-Nig-Ltd-4.webp",
+      "/images/Lowpond-Projects6.jpeg",
+      "/images/Lowpond-Projects7.jpeg",
+      "/images/Lowpond-Projects8.jpeg",
+      "/images/Lowpond-Projects10.jpeg",
+      "/images/Lowpond-Projects11.jpeg",
+      "/images/Lowpond-Projects12.jpeg",
+    ],
     location: "Plateau State, Nigeria",
     year: "2025",
+  },
+  {
+    title: "Emzor Pharmaceutical (Warehouse Construction)",
+    category: "Structural Engineering",
+    summary:
+      "Large-scale pharmaceutical warehouse delivered with steel frame construction, mezzanine systems, and loading infrastructure for Emzor.",
+    image: "/images/Lowpond-Projects3.jpeg",
+    images: [
+      "/images/Lowpond-Projects3.jpeg",
+      "/images/Lowpond-Projects4.jpeg",
+      "/images/Lowpond-Projects9.jpeg",
+      "/images/Lowpond-Projects12.jpeg",
+    ],
+    location: "Ogun State,Nigeria",
+    year: "2016",
+  },
+  {
+    title: "Road Construction and Concrete Elements (Jos, Plateau)",
+    category: "Civil Infrastructure",
+    summary:
+      "Road construction and reinforced concrete works including earthworks, rebar assembly, and structural pours for infrastructure in Jos.",
+    image: "/images/Lowpond-Projects17.jpeg",
+    images: [
+      "/images/Lowpond-Projects17.jpeg",
+      "/images/Lowpond-Projects16.jpeg",
+      "/images/Lowpond-Projects15.jpeg",
+    ],
+    location: "Jos, Plateau State",
+    year: "2022",
   },
 ];

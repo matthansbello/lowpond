@@ -2,15 +2,20 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { X, Maximize2 } from "lucide-react";
+import { X, Maximize2, ChevronLeft, ChevronRight } from "lucide-react";
 
 export interface Project {
   title: string;
   category: string;
   summary: string;
   image: string;
+  images?: string[];
   location?: string;
   year?: string;
+}
+
+function getProjectImages(project: Project): string[] {
+  return project.images ?? [project.image];
 }
 
 interface ProjectGalleryProps {
@@ -19,6 +24,23 @@ interface ProjectGalleryProps {
 
 export function ProjectGallery({ projects }: ProjectGalleryProps) {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [imageIndex, setImageIndex] = useState(0);
+
+  const openProject = (project: Project) => {
+    setImageIndex(0);
+    setSelectedProject(project);
+  };
+
+  const selectedImages = selectedProject ? getProjectImages(selectedProject) : [];
+  const hasMultipleImages = selectedImages.length > 1;
+
+  const showPrevImage = () => {
+    setImageIndex((prev) => (prev - 1 + selectedImages.length) % selectedImages.length);
+  };
+
+  const showNextImage = () => {
+    setImageIndex((prev) => (prev + 1) % selectedImages.length);
+  };
 
   return (
     <div className="space-y-12">
@@ -28,7 +50,7 @@ export function ProjectGallery({ projects }: ProjectGalleryProps) {
           <div 
             key={i} 
             className="group relative bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 cursor-pointer hover:shadow-xl transition-all duration-500"
-            onClick={() => setSelectedProject(project)}
+            onClick={() => openProject(project)}
           >
             {/* Image Container */}
             <div className="aspect-[4/5] relative overflow-hidden">
@@ -81,11 +103,46 @@ export function ProjectGallery({ projects }: ProjectGalleryProps) {
             {/* Main Image */}
             <div className="relative flex-1 bg-gray-100 min-h-[300px]">
               <Image
-                src={selectedProject.image}
-                alt={selectedProject.title}
+                key={selectedImages[imageIndex]}
+                src={selectedImages[imageIndex]}
+                alt={`${selectedProject.title} — photo ${imageIndex + 1}`}
                 fill
                 className="object-cover"
               />
+
+              {hasMultipleImages && (
+                <>
+                  <button
+                    type="button"
+                    onClick={showPrevImage}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-black/40 text-white hover:bg-black/60 transition-colors"
+                    aria-label="Previous photo"
+                  >
+                    <ChevronLeft className="w-6 h-6" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={showNextImage}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-black/40 text-white hover:bg-black/60 transition-colors"
+                    aria-label="Next photo"
+                  >
+                    <ChevronRight className="w-6 h-6" />
+                  </button>
+                  <div className="absolute bottom-4 left-0 right-0 z-10 flex justify-center gap-2">
+                    {selectedImages.map((_, idx) => (
+                      <button
+                        key={idx}
+                        type="button"
+                        onClick={() => setImageIndex(idx)}
+                        className={`h-2 rounded-full transition-all duration-300 ${
+                          idx === imageIndex ? "w-6 bg-white" : "w-2 bg-white/50 hover:bg-white/70"
+                        }`}
+                        aria-label={`View photo ${idx + 1}`}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
             </div>
 
             {/* Project Details */}

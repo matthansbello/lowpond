@@ -8,10 +8,15 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
 const BACKGROUND_IMAGES = [
-  "/images/Lowpond-1.webp",
-  "/images/Lowpond-2.webp",
-  "/images/Lowpond-Nig-Ltd-6.webp",
-  "/images/Lowpond-Nig-Ltd-1.webp",
+  "/images/Lowpond-Projects7.jpeg",
+  "/images/Lowpond-Projects4.jpeg",
+  "/images/Lowpond-Projects2.jpeg",
+];
+
+const IMAGE_ALTS = [
+  "Modern logistics warehouse with solar panels and loading bays",
+  "Industrial warehouse interior with steel structure and mezzanine",
+  "Distribution center with commercial trucks at loading docks",
 ];
 
 const AUTOPLAY_INTERVAL = 6000;
@@ -39,7 +44,7 @@ export function HeroSlider() {
         >
           <Image
             src={BACKGROUND_IMAGES[currentIndex]}
-            alt=""
+            alt={IMAGE_ALTS[currentIndex]}
             fill
             priority={currentIndex === 0}
             sizes="100vw"
